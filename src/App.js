@@ -23,9 +23,18 @@ function App() {
       <div className='container'>
         <Switch>
           <GuardedRoute exact path='/' component={Dashboard} auth={localStorage.getItem('token')}/>
-          <GuardedRoute path='/seller' component={Seller} auth={localStorage.getItem('token')}/>
-          <GuardedRoute path='/buyer' component={Buyer} auth={localStorage.getItem('token')}/>
-          <GuardedRoute path='/admin' component={Admin} auth={localStorage.getItem('token')}/>
+          {
+            localStorage.getItem('user_type')=='seller' &&
+            <GuardedRoute path='/seller' component={Seller} auth={localStorage.getItem('token')}/>
+          }
+          {
+            localStorage.getItem('user_type')=='buyer' &&
+            <GuardedRoute path='/buyer' component={Buyer} auth={localStorage.getItem('token')}/>
+          }
+          {
+            localStorage.getItem('user_type')=='admin' &&
+            <GuardedRoute path='/admin' component={Admin} auth={localStorage.getItem('token')}/>
+          }
         </Switch>
       </div>
     </div>
