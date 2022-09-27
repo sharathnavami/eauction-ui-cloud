@@ -78,10 +78,10 @@ export default function BuyerSearchAction() {
 
     function getProductDetails() {
         axios.defaults.headers.common['Authorization'] = `Bearer ${JSON.stringify(localStorage.getItem('token')).replaceAll('"','').replaceAll('\\','')}`;
-        axios.defaults.headers.post['Content-Type'] ='application/json';
-        axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-        axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
-        axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
+        axios.defaults.headers.common['Content-Type'] ='application/json';
+        axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+        axios.defaults.headers.common['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
+        axios.defaults.headers.common['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept';
         let url='http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8082/e-auction/api/v1/buyer/show-all-product';
         axios.get(url)
             .then(res => {
