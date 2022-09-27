@@ -51,7 +51,7 @@ export default function SellersearchAction() {
         axios.defaults.headers.common['Content-Type'] ='application/json';
         axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         axios.defaults.headers.common['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
-        axios.defaults.headers.common['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept';
+        axios.defaults.headers.common['Access-Control-Allow-Headers'] = '*';
 
         let url='http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8081/e-auction/api/v1/seller/show-bids/name';
         if(searchInput!==undefined){
