@@ -38,7 +38,7 @@ export default function AddUser(props) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${JSON.stringify(localStorage.getItem('token')).replaceAll('"', '').replaceAll('\\', '')}`;
     axios.defaults.headers.post['Content-Type'] = 'application/json';
     axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-    axios.post('http://localhost:8083/e-auction/api/v1/admin/addUser', form)
+    axios.post('http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8083/e-auction/api/v1/admin/addUser', form)
       .then(response => {
         console.log("response==" + response);
         setErrorMessage("User Added Successfully");

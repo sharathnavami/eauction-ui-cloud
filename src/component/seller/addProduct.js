@@ -43,7 +43,7 @@ export default function AddProduct(props) {
     axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
     axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
-    axios.post('http://localhost:8081/e-auction/api/v1/seller/add-product-seller', form)
+    axios.post('http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8081/e-auction/api/v1/seller/add-product-seller', form,{timeout: 10000})
       .then(response => {
         console.log("response==" + response);
         setErrorMessage("Product Added Successfully");

@@ -29,7 +29,7 @@ export default function Login(props) {
   }
 
   function addProductApi() {
-    axios.post('http://localhost:8083/e-auction/api/v1/login', form)
+    axios.post('http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8083/e-auction/api/v1/login', form)
       .then(response => {
         localStorage.setItem('user_type', JSON.stringify(response.data.userType).replaceAll('"', ''));
         props.setToken(response.data.token);

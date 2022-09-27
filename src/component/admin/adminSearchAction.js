@@ -24,7 +24,7 @@ export default function AdminSearchAction() {
         axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
         axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
 
-        let url='http://localhost:8083/e-auction/api/v1/admin/user-details';
+        let url='http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8083/e-auction/api/v1/admin/user-details';
         if(searchInput!==undefined){
             url=url+'/'+searchInput;
         }

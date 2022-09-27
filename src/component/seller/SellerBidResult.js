@@ -20,7 +20,7 @@ export default function SellerBidSearchResult(props) {
         axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
         axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
         axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
-        axios.delete(`http://localhost:8081/e-auction/api/v1/seller/delete/${props.data.data.id}`)
+        axios.delete(`http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8081/e-auction/api/v1/seller/delete/${props.data.data.id}`)
             .then(res => { 
                 console.log(res);
                 props.data.refreshGrid()

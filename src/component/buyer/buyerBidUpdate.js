@@ -32,7 +32,7 @@ export default function BuyerBidUpdate(props) {
         axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
         axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
         axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
-        axios.put(`http://localhost:8082/e-auction/api/v1/buyer/update-bid/${props.data.selectRow.productId}/${props.data.selectRow.buyerEmail}/${updatedBidAmount}`)
+        axios.put(`http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8082/e-auction/api/v1/buyer/update-bid/${props.data.selectRow.productId}/${props.data.selectRow.buyerEmail}/${updatedBidAmount}`)
             .then(res => { 
                 console.log(res);
                 props.data?.refreshSearch();

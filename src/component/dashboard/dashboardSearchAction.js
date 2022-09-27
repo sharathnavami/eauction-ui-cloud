@@ -48,7 +48,7 @@ export default function DashboardSearchAction() {
         axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
         axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
         axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
-        let url = 'http://localhost:8082/e-auction/api/v1/buyer/show-all-product';
+        let url = 'http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8082/e-auction/api/v1/buyer/show-all-product';
         axios.get(url)
             .then(res => {
                 console.log("response==" + JSON.stringify(res.data));
@@ -62,7 +62,7 @@ export default function DashboardSearchAction() {
         axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
         axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
         axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
-        let url = `http://localhost:8082/e-auction/api/v1/buyer/dashboard/${searchInput}`;
+        let url = `http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8082/e-auction/api/v1/buyer/dashboard/${searchInput}`;
         axios.get(url)
             .then(res => {
                 console.log("response==" + JSON.stringify(res.data));

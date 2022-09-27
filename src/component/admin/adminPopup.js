@@ -24,7 +24,7 @@ export default function AdminPopup() {
       axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
       axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
       axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
-      axios.get('http://localhost:8083/e-auction/api/v1/admin/seller-details')
+      axios.get('http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8083/e-auction/api/v1/admin/seller-details')
         .then(response => {
           console.log("response==" + JSON.stringify(response));
           setSellerEmail(response.data);

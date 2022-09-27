@@ -33,7 +33,7 @@ export default function BuyerProductBid(props) {
         axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
         axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS';
         axios.defaults.headers.post['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
-        axios.post('http://localhost:8082/e-auction/api/v1/buyer/place-bid-buyer', {
+        axios.post('http://eauction-lb-818900349.us-west-2.elb.amazonaws.com:8082/e-auction/api/v1/buyer/place-bid-buyer', {
             "amount": bidAmount,
             "productId": props.data.selectProductRow?.id,
             "productName": props.data.selectProductRow?.name
